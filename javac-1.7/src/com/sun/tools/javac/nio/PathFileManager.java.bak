@@ -21,7 +21,7 @@
  * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
  * or visit www.oracle.com if you need additional information or have any
  * questions.
- 
+ */
 
 package com.sun.tools.javac.nio;
 
@@ -32,7 +32,7 @@ import javax.tools.FileObject;
 import javax.tools.JavaFileManager;
 import javax.tools.JavaFileObject;
 
-*//**
+/**
  *  File manager based on {@linkplain File java.nio.file.Path}.
  *
  *  Eventually, this should be moved to javax.tools.
@@ -45,32 +45,32 @@ import javax.tools.JavaFileObject;
  *  If you write code that depends on this, you do so at your own risk.
  *  This code and its internal interfaces are subject to change or
  *  deletion without notice.</b>
- *//*
+ */
 public interface PathFileManager extends JavaFileManager {
-    *//**
+    /**
      * Get the default file system used to create paths. If no value has been
      * set, the default file system is {@link FileSystems#getDefault}.
-     *//*
+     */
     FileSystem getDefaultFileSystem();
 
-    *//**
+    /**
      * Set the default file system used to create paths.
      * @param fs the default file system used to create any new paths.
-     *//*
+     */
     void setDefaultFileSystem(FileSystem fs);
 
-    *//**
+    /**
      * Get file objects representing the given files.
      *
      * @param paths a list of paths
      * @return a list of file objects
      * @throws IllegalArgumentException if the list of paths includes
      * a directory
-     *//*
+     */
     Iterable<? extends JavaFileObject> getJavaFileObjectsFromPaths(
         Iterable<? extends Path> paths);
 
-    *//**
+    /**
      * Get file objects representing the given paths.
      * Convenience method equivalent to:
      *
@@ -84,10 +84,10 @@ public interface PathFileManager extends JavaFileManager {
      * a directory
      * @throws NullPointerException if the given array contains null
      * elements
-     *//*
+     */
     Iterable<? extends JavaFileObject> getJavaFileObjects(Path... paths);
 
-    *//**
+    /**
      * Return the Path for a file object that has been obtained from this
      * file manager.
      *
@@ -95,20 +95,20 @@ public interface PathFileManager extends JavaFileManager {
      * @return The underlying Path object.
      * @throws IllegalArgumentException is the file object was not obtained from
      * from this file manager.
-     *//*
+     */
     Path getPath(FileObject fo);
 
-    *//**
+    /**
      * Get the search path associated with the given location.
      *
      * @param location a location
      * @return a list of paths or {@code null} if this location has no
      * associated search path
      * @see #setLocation
-     *//*
+     */
     Iterable<? extends Path> getLocation(Location location);
 
-    *//**
+    /**
      * Associate the given search path with the given location.  Any
      * previous value will be discarded.
      *
@@ -120,7 +120,6 @@ public interface PathFileManager extends JavaFileManager {
      * location and searchpath does not contain exactly one element
      * @throws IOException if location is an output location and searchpath
      * does not represent an existing directory
-     *//*
+     */
     void setLocation(Location location, Iterable<? extends Path> searchPath) throws IOException;
 }
-*/

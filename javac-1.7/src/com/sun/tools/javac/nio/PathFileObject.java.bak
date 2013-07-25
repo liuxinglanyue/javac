@@ -21,7 +21,7 @@
  * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
  * or visit www.oracle.com if you need additional information or have any
  * questions.
- 
+ */
 
 package com.sun.tools.javac.nio;
 
@@ -47,7 +47,7 @@ import javax.tools.JavaFileObject;
 import com.sun.tools.javac.util.BaseFileManager;
 
 
-*//**
+/**
  *  Implementation of JavaFileObject using java.nio.file API.
  *
  *  <p>PathFileObjects are, for the most part, straightforward wrappers around
@@ -60,15 +60,15 @@ import com.sun.tools.javac.util.BaseFileManager;
  *  If you write code that depends on this, you do so at your own risk.
  *  This code and its internal interfaces are subject to change or
  *  deletion without notice.</b>
- *//*
+ */
 abstract class PathFileObject implements JavaFileObject {
     private JavacPathFileManager fileManager;
     private Path path;
 
-    *//**
+    /**
      * Create a PathFileObject within a directory, such that the binary name
      * can be inferred from the relationship to the parent directory.
-     *//*
+     */
     static PathFileObject createDirectoryPathFileObject(JavacPathFileManager fileManager,
             final Path path, final Path dir) {
         return new PathFileObject(fileManager, path) {
@@ -79,10 +79,10 @@ abstract class PathFileObject implements JavaFileObject {
         };
     }
 
-    *//**
+    /**
      * Create a PathFileObject in a file system such as a jar file, such that
      * the binary name can be inferred from its position within the filesystem.
-     *//*
+     */
     static PathFileObject createJarPathFileObject(JavacPathFileManager fileManager,
             final Path path) {
         return new PathFileObject(fileManager, path) {
@@ -93,10 +93,10 @@ abstract class PathFileObject implements JavaFileObject {
         };
     }
 
-    *//**
+    /**
      * Create a PathFileObject whose binary name can be inferred from the
      * relative path to a sibling.
-     *//*
+     */
     static PathFileObject createSiblingPathFileObject(JavacPathFileManager fileManager,
             final Path path, final String relativePath) {
         return new PathFileObject(fileManager, path) {
@@ -107,10 +107,10 @@ abstract class PathFileObject implements JavaFileObject {
         };
     }
 
-    *//**
+    /**
      * Create a PathFileObject whose binary name might be inferred from its
      * position on a search path.
-     *//*
+     */
     static PathFileObject createSimplePathFileObject(JavacPathFileManager fileManager,
             final Path path) {
         return new PathFileObject(fileManager, path) {
@@ -143,10 +143,10 @@ abstract class PathFileObject implements JavaFileObject {
 
     abstract String inferBinaryName(Iterable<? extends Path> paths);
 
-    *//**
+    /**
      * Return the Path for this object.
      * @return the Path for this object.
-     *//*
+     */
     Path getPath() {
         return path;
     }
@@ -315,4 +315,3 @@ abstract class PathFileObject implements JavaFileObject {
         return (lastDot == -1 ? fileName : fileName.substring(0, lastDot));
     }
 }
-*/

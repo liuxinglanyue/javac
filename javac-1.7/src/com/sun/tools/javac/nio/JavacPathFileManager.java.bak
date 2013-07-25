@@ -21,7 +21,7 @@
  * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
  * or visit www.oracle.com if you need additional information or have any
  * questions.
- 
+ */
 
 package com.sun.tools.javac.nio;
 
@@ -83,7 +83,7 @@ import static com.sun.tools.javac.main.OptionName.*;
 // when compiling this and related classes. The set of stub files
 // is specified in make/build.properties.
 
-*//**
+/**
  *  Implementation of PathFileManager: a JavaFileManager based on the use
  *  of java.nio.file.Path.
  *
@@ -104,14 +104,14 @@ import static com.sun.tools.javac.main.OptionName.*;
  *  If you write code that depends on this, you do so at your own risk.
  *  This code and its internal interfaces are subject to change or
  *  deletion without notice.</b>
- *//*
+ */
 public class JavacPathFileManager extends BaseFileManager implements PathFileManager {
     protected FileSystem defaultFileSystem;
 
-    *//**
+    /**
      * Create a JavacPathFileManager using a given context, optionally registering
      * it as the JavaFileManager for that context.
-     *//*
+     */
     public JavacPathFileManager(Context context, boolean register, Charset charset) {
         super(charset);
         if (register)
@@ -121,9 +121,9 @@ public class JavacPathFileManager extends BaseFileManager implements PathFileMan
         setContext(context);
     }
 
-    *//**
+    /**
      * Set the context for JavacPathFileManager.
-     *//*
+     */
     @Override
     protected void setContext(Context context) {
         super.setContext(context);
@@ -341,7 +341,7 @@ public class JavacPathFileManager extends BaseFileManager implements PathFileMan
         if (!Files.exists(packageDir))
             return;
 
- Alternate impl of list, superceded by use of Files.walkFileTree 
+/* Alternate impl of list, superceded by use of Files.walkFileTree */
 //        Deque<Path> queue = new LinkedList<Path>();
 //        queue.add(packageDir);
 //
@@ -544,4 +544,3 @@ public class JavacPathFileManager extends BaseFileManager implements PathFileMan
     // </editor-fold>
 
 }
-*/
